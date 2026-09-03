@@ -15,7 +15,6 @@ services:
     #  - zigbee2mqtt  # zigbee2mqtt is optional (only if you want to add Zigbee devices and have a zigbee sniffer attached).
     #  - eclipse-mosquitto # aka mosquitto-mqtt is optional (only if you want to add Zigbee devices and have a zigbee sniffer attached).
 
-
   # MariaDb
   #mariadb:
   #  container_name: mariadb
