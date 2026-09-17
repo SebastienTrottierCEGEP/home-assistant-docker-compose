@@ -151,3 +151,41 @@
     target:
       entity_id: notify.s_trottier_home_assistant_s_trottier
   mode: single
+- id: examen_pere_noel_en_route
+  alias: Examen - Père Noël en route
+  description: Met à jour le message lorsque le Père Noël est en route le 24 décembre.
+  triggers:
+  - trigger: state
+    entity_id: input_select.pere_noel_dans_ma_maison
+  conditions:
+  - condition: state
+    entity_id: input_select.pere_noel_dans_ma_maison
+    state: Pas à la maison
+  - condition: state
+    entity_id: input_datetime.date_examen
+    state: '2025-12-24'
+  actions:
+  - action: input_text.set_value
+    target:
+      entity_id: input_text.texte_examen
+    data:
+      value: Le Père Noël est en route!
+  mode: single
+- id: examen_pere_noel_arrive
+  alias: Examen - Père Noël à la maison
+  description: Avertit lorsque le Père Noël arrive et que je suis à la maison.
+  triggers:
+  - trigger: state
+    entity_id: input_select.pere_noel_dans_ma_maison
+    to: À la maison
+  conditions:
+  - condition: state
+    entity_id: input_boolean.je_suis_a_la_maison
+    state: 'on'
+  actions:
+  - action: input_text.set_value
+    target:
+      entity_id: input_text.texte_examen
+    data:
+      value: Le Père Noël arrive, réveille-toi!
+  mode: single

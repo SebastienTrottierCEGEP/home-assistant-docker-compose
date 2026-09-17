@@ -1,0 +1,48 @@
+title: Noël
+views:
+  - title: Noël
+    path: noel
+    icon: mdi:string-lights
+    cards:
+      - type: entities
+        title: Capteurs virtuels
+        entities:
+          - entity: input_select.pere_noel_dans_ma_maison
+            name: Père Noël dans ma maison
+          - entity: input_boolean.je_suis_a_la_maison
+            name: Je suis à la maison
+          - entity: input_text.texte_examen
+            name: Texte examen
+          - entity: input_datetime.date_examen
+            name: Date examen
+      - type: horizontal-stack
+        cards:
+          - type: button
+            name: Déplacer le Père Noël à la maison
+            icon: mdi:home
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              target:
+                entity_id: input_select.pere_noel_dans_ma_maison
+              data:
+                option: À la maison
+          - type: button
+            name: Déplacer le Père Noël hors de la maison
+            icon: mdi:home-export-outline
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              target:
+                entity_id: input_select.pere_noel_dans_ma_maison
+              data:
+                option: Pas à la maison
+      - type: markdown
+        title: Résultat
+        content: >-
+          {% if is_state('input_select.pere_noel_dans_ma_maison', 'Pas à la maison')
+                and is_state('input_datetime.date_examen', '2025-12-24') %}
+            Vrai
+          {% else %}
+            Faux
+          {% endif %}

@@ -3,6 +3,7 @@ config/home-assistant/*
 !config/home-assistant/scripts.yaml
 !config/home-assistant/configuration.yaml
 !config/home-assistant/scenes.yaml
+!config/home-assistant/noel.yaml
 !config/home-assistant/.storage/
 
 config/home-assistant/.storage/*

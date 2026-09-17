@@ -9,3 +9,37 @@ frontend:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+input_select:
+  pere_noel_dans_ma_maison:
+    name: Père Noël dans ma maison
+    icon: mdi:string-lights
+    options:
+      - À la maison
+      - Pas à la maison
+    initial: Pas à la maison
+
+input_boolean:
+  je_suis_a_la_maison:
+    name: Je suis à la maison
+
+input_text:
+  texte_examen:
+    name: Texte examen
+    max: 255
+
+input_datetime:
+  date_examen:
+    name: Date examen
+    has_date: true
+    has_time: false
+    initial: '2025-12-24'
+
+lovelace:
+  dashboards:
+    noel-dashboard:
+      mode: yaml
+      title: Noël
+      icon: mdi:string-lights
+      show_in_sidebar: true
+      filename: noel.yaml
