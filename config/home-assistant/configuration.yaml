@@ -10,16 +10,12 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
-input_select:
+input_boolean:
   pere_noel_dans_ma_maison:
     name: Père Noël dans ma maison
     icon: mdi:string-lights
-    options:
-      - À la maison
-      - Pas à la maison
-    initial: Pas à la maison
+    initial: false
 
-input_boolean:
   je_suis_a_la_maison:
     name: Je suis à la maison
 

@@ -156,11 +156,11 @@
   description: Met à jour le message lorsque le Père Noël est en route le 24 décembre.
   triggers:
   - trigger: state
-    entity_id: input_select.pere_noel_dans_ma_maison
+    entity_id: input_boolean.pere_noel_dans_ma_maison
   conditions:
   - condition: state
-    entity_id: input_select.pere_noel_dans_ma_maison
-    state: Pas à la maison
+    entity_id: input_boolean.pere_noel_dans_ma_maison
+    state: 'off'
   - condition: state
     entity_id: input_datetime.date_examen
     state: '2025-12-24'
@@ -176,8 +176,8 @@
   description: Avertit lorsque le Père Noël arrive et que je suis à la maison.
   triggers:
   - trigger: state
-    entity_id: input_select.pere_noel_dans_ma_maison
-    to: À la maison
+    entity_id: input_boolean.pere_noel_dans_ma_maison
+    to: 'on'
   conditions:
   - condition: state
     entity_id: input_boolean.je_suis_a_la_maison
