@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.esphome_device_builder",
+  "data": {
+    "config": {
+      "strategy": {
+        "type": "iframe",
+        "url": "http://localhost:6052/"
+      }
+    }
+  }
+}

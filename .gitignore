@@ -3,8 +3,21 @@ config/home-assistant/*
 !config/home-assistant/scripts.yaml
 !config/home-assistant/configuration.yaml
 !config/home-assistant/scenes.yaml
+!config/home-assistant/.storage/
+
+config/home-assistant/.storage/*
+# Whitelist safe UI dashboards and room/entity registries
+!config/home-assistant/.storage/input*
+!config/home-assistant/.storage/lovelace*
+!config/home-assistant/.storage/core.area_registry
+!config/home-assistant/.storage/core.floor_registry
+!config/home-assistant/.storage/core.entity_registry
+!config/home-assistant/.storage/core.device_registry
+!config/home-assistant/.storage/person
+
 config/zigbee2mqtt/log/
 store/coder/coder-logs/
 store/mariadb/
 credentials.txt
+.vscode/
 esphome/

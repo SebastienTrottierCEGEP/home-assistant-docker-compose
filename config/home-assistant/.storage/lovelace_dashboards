@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_dashboards",
+  "data": {
+    "items": [
+      {
+        "id": "map",
+        "icon": "mdi:map",
+        "title": "Carte",
+        "url_path": "map",
+        "require_admin": false,
+        "show_in_sidebar": true,
+        "mode": "storage"
+      },
+      {
+        "id": "dashboard_xiao",
+        "require_admin": false,
+        "show_in_sidebar": true,
+        "icon": "mdi:cpu-32-bit",
+        "title": "ESPHome devices",
+        "url_path": "dashboard-xiao",
+        "mode": "storage"
+      },
+      {
+        "id": "exercice_13",
+        "require_admin": false,
+        "show_in_sidebar": true,
+        "icon": "mdi:account-file",
+        "title": "Exercice 13",
+        "url_path": "exercice-13",
+        "mode": "storage"
+      },
+      {
+        "id": "esphome_device_builder",
+        "require_admin": false,
+        "show_in_sidebar": true,
+        "icon": "mdi:memory",
+        "title": "ESPHome Device Builder",
+        "url_path": "esphome-device-builder",
+        "mode": "storage"
+      },
+      {
+        "id": "exercice_14",
+        "require_admin": false,
+        "show_in_sidebar": true,
+        "icon": "mdi:account-convert",
+        "title": "Exercice 14",
+        "url_path": "exercice-14",
+        "mode": "storage"
+      }
+    ]
+  }
+}

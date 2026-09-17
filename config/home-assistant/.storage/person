@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "sebastien_trottier",
+        "name": "Sébastien Trottier",
+        "user_id": "73c2ed64109648f98032d5b11615007b",
+        "device_trackers": [
+          "device_tracker.pixel_6a",
+          "device_tracker.emulateur_android_studio"
+        ]
+      }
+    ]
+  }
+}

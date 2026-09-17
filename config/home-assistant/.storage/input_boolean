@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_boolean",
+  "data": {
+    "items": [
+      {
+        "id": "interrupteur_virtuel_1",
+        "name": "interrupteur_virtuel_1",
+        "icon": "mdi:abacus"
+      },
+      {
+        "id": "exercice_13_capteur_virtuel",
+        "name": "Exercice 13 - capteur virtuel",
+        "icon": "mdi:account-child-circle"
+      },
+      {
+        "id": "ex_13_7_lumiere_salon_virtuelle",
+        "name": "Exercice 13 Lumière salon virtuelle",
+        "icon": "mdi:car-light-high"
+      },
+      {
+        "id": "exercice_13_tv_viruelle",
+        "name": "Exercice 13 TV virtuelle",
+        "icon": "mdi:television"
+      },
+      {
+        "id": "exercice_13_8_capteur_virtuel_de_mouvement",
+        "name": "Exercice 13.8 - capteur virtuel de mouvement",
+        "icon": "mdi:account-card-outline"
+      },
+      {
+        "id": "capteur_virtuel_ex14",
+        "name": "Exercice 14 - Capteur Virtuel  Booleen",
+        "icon": "mdi:account-edit"
+      }
+    ]
+  }
+}

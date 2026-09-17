@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_number",
+  "data": {
+    "items": [
+      {
+        "id": "lampe_virtuelle",
+        "min": 0.0,
+        "max": 100.0,
+        "name": "Lampe virtuelle",
+        "icon": "mdi:floor-lamp",
+        "unit_of_measurement": "%",
+        "step": 1.0,
+        "mode": "slider"
+      },
+      {
+        "id": "exercice_13_recepteur_virtuel",
+        "min": 0.0,
+        "max": 100.0,
+        "name": "Exercice 13 - récepteur virtuel",
+        "icon": "mdi:fan",
+        "step": 1.0,
+        "mode": "slider"
+      },
+      {
+        "id": "exercice_13_8_capteur_virtuel_de_luminosite",
+        "min": 0.0,
+        "max": 100.0,
+        "name": "Exercice 13.8 - capteur virtuel de luminosité",
+        "icon": "mdi:car-light-fog",
+        "step": 1.0,
+        "mode": "slider"
+      },
+      {
+        "id": "exercice_14_capteur_virtuel_entier",
+        "min": 0.0,
+        "max": 100.0,
+        "name": "Exercice 14 - capteur virtuel entier",
+        "icon": "mdi:numeric",
+        "step": 1.0,
+        "mode": "slider"
+      },
+      {
+        "id": "exercice_14_efforts",
+        "min": 0.0,
+        "max": 10.0,
+        "name": "Exercice 14 - Efforts",
+        "icon": "mdi:brain",
+        "step": 1.0,
+        "mode": "slider"
+      }
+    ]
+  }
+}

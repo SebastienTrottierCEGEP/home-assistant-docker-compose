@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.exercice_13",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "type": "sections",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "2.",
+                  "heading_style": "title",
+                  "icon": "mdi:account-box"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.exercice_13_capteur_virtuel",
+                  "features": [
+                    {
+                      "type": "toggle"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_number.exercice_13_recepteur_virtuel",
+                  "features": [
+                    {
+                      "type": "numeric-input"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_button.exercice_13_2_activer_manuellement_automatisation",
+                  "features": [
+                    {
+                      "type": "button"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "automation.exercice_13_2_incrementer_recapteur_virtuel_apres_2s_activation_capteur_virutel"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading_style": "title",
+                  "icon": "mdi:account-edit-outline",
+                  "heading": "5."
+                },
+                {
+                  "type": "tile",
+                  "entity": "weather.openweathermap",
+                  "name": "Météo",
+                  "state_content": [
+                    "state",
+                    "temperature"
+                  ],
+                  "vertical": false,
+                  "features_position": "bottom"
+                },
+                {
+                  "type": "tile",
+                  "entity": "weather.openweathermap"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "6.",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "tile",
+                  "entity": "automation.increment_si_temp_au_dessus_de_10_deg_celsius_seulement"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "8.",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "tile",
+                  "entity": "script.exercice_13_regarder_tv",
+                  "features": [
+                    {
+                      "type": "button"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "automation.exercice_13_8_mode_tv"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.ex_13_7_lumiere_salon_virtuelle",
+                  "features": [
+                    {
+                      "type": "toggle"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.exercice_13_tv_viruelle",
+                  "features": [
+                    {
+                      "type": "toggle"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_number.exercice_13_8_capteur_virtuel_de_luminosite",
+                  "features": [
+                    {
+                      "type": "numeric-input"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.exercice_13_8_capteur_virtuel_de_mouvement",
+                  "features": [
+                    {
+                      "type": "toggle"
+                    }
+                  ]
+                }
+              ],
+              "column_span": 4
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

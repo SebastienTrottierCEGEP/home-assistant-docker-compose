@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_button",
+  "data": {
+    "items": [
+      {
+        "id": "exercice_13_2_activer_manuellement_automatisation",
+        "name": "Exercice 13.2 Activer manuellement Automatisation",
+        "icon": "mdi:account-cowboy-hat"
+      }
+    ]
+  }
+}

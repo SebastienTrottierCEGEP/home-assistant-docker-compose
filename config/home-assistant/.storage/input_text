@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_text",
+  "data": {
+    "items": [
+      {
+        "id": "exercice_14_resultats",
+        "name": "Exercice 14 - Resultats",
+        "icon": "mdi:chart-bell-curve-cumulative",
+        "min": 0,
+        "max": 100,
+        "mode": "text"
+      }
+    ]
+  }
+}

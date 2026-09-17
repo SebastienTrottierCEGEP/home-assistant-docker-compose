@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.exercice_14",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "type": "sections",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.capteur_virtuel_ex14",
+                  "features": [
+                    {
+                      "type": "toggle"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_number.exercice_14_capteur_virtuel_entier",
+                  "features": [
+                    {
+                      "type": "numeric-input"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.openweathermap_temperature",
+                  "show_entity_picture": false,
+                  "hide_state": false,
+                  "vertical": false,
+                  "features_position": "bottom"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_number.exercice_14_efforts",
+                  "features": [
+                    {
+                      "type": "numeric-input"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_text.exercice_14_resultats"
+                },
+                {
+                  "type": "markdown",
+                  "title": "Modèles Ex 14",
+                  "content": "1\\. Écrivez un modèle qui retourne la valeur d'un capteur virtuel booléen.\nTestez ce modèle dans les outils de développement.\nModifiez sa valeur dans le tableau de bord et assurez-vous que le modèle reflète le changement.\n\n    {{ states('input_boolean.capteur_virtuel_ex14') }}\n\n\n2\\. Écrivez un modèle qui retourne true seulement si le capteur virtuel booléen est à true.\n\n    {{ is_state('input_boolean.capteur_virtuel_ex14', 'on') }}\n\n3\\. Écrivez un modèle qui retourne la valeur d'un de vos capteurs réels, par exemple la luminosité d'un capteur 5 en 1.\n\n    {{ states('sensor.capteur_5en1_luminosite') }}\n\n4\\. Écrivez un modèle qui retourne  « ouverte » ou « fermée » selon l'état d'un capteur d'ouverture de porte réel ou virtuel.\n\n    {% if is_state('input_boolean.capteur_virtuel_ex14', 'on') %}\n    ouverte\n    {% else %}\n    fermée\n    {% endif %}\n\n5\\. Écrivez un modèle qui retourne la valeur d'un capteur de votre choix multipliée par 5.\n\n    {{ (states('input_number.exercice_14_capteur_virtuel_entier') | int * 5) }}\n\n6\\. Écrivez un modèle qui retourne la température en Fahrenheit à partir d'un capteur qui donne la température en Celsius.\nVous pouvez utiliser un capteur réel ou encore le capteur de météo.\n\n    {{ (states('sensor.openweathermap_temperature') | float * 9 / 5 + 32) | round(1) }} F\n\n7\\. Créez un capteur virtuel nommé Efforts. Il doit être en mesure de fournir un nombre situé entre 0 et 10. \nAssociez ce capteur à l’icône « brain ».\n\n8\\. Créez un récepteur virtuel textuel nommé Résultats.\nAssociez ce récepteur à l’icône « chart-bell-curve-cumulative ».\n\n9\\. Créez une automatisation nommée « Efforts influencent résultats » qui fait en sorte qu’à chaque fois que les efforts changent, les résultats prennent la valeur « Efforts \\* 10 » suivi du signe %.\n\n    {{ (states('input_number.exercice_14_efforts') | int * 10) }} %\n\n10\\. Écrivez un modèle qui calcule le nombre de jours restants avant Noël.\n\n    {# Ne fonctionne pas entre Noel et le jour de l'an#}\n    {% set year = now().year %}\n    {% set noel = strptime(year ~ '-12-25', '%Y-%m-%d') %}\n    {% set difference = noel.date() - now().date() %}\n    {{ difference.days }} jours\n\n11\\. OPTIONNEL : ajoutez une carte sur le tableau de bord qui affiche le nombre de jours restants avant Noël. Suggestion : utilisez la [syntaxe Markdown](https://commonmark.org/help/) pour afficher le chiffre un peu plus gros.\n\n{# signe # pour faire un entete - affiché plus gros #}\n# {{ difference.days }} jours\n\n",
+                  "grid_options": {
+                    "columns": "full"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "automation.exercice_14_efforts_influencent_resultats"
+                }
+              ],
+              "column_span": 4
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

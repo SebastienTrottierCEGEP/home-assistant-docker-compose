@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_xiao",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "type": "sections",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Nouvelle section"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_number.lampe_virtuelle",
+                  "features": [
+                    {
+                      "type": "numeric-input"
+                    }
+                  ]
+                },
+                {
+                  "type": "gauge",
+                  "entity": "sensor.salon_xiao_esp32c6_rouge_xiao_potentiometer_value"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Xiao-Esp32C6-Rouge"
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.salon_xiao_esp32c6_rouge_xiao_esp32_c6_rouge_dimmable_led_12v_pin_a01"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Waveshare C6 + LCD",
+                  "heading_style": "title",
+                  "icon": "mdi:television"
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.waveshare_esp32_c6_lcd_display_backlight_power",
+                  "features": [
+                    {
+                      "type": "toggle"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.waveshare_esp32_c6_lcd_onboard_status_led",
+                  "color": "primary",
+                  "vertical": false,
+                  "features": [
+                    {
+                      "type": "toggle"
+                    }
+                  ],
+                  "features_position": "bottom"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.esphome_devices_waveshare_esp32_c6_lcd_wifi_signal"
+                },
+                {
+                  "type": "statistics-graph",
+                  "entities": [
+                    "sensor.esphome_devices_waveshare_esp32_c6_lcd_wifi_signal"
+                  ],
+                  "days_to_show": 1,
+                  "period": "hour",
+                  "chart_type": "line",
+                  "stat_types": [
+                    "mean"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
