@@ -1,5 +1,10 @@
-config/home-assistant/
+config/home-assistant/*
+!config/home-assistant/automations.yaml
+!config/home-assistant/scripts.yaml
+!config/home-assistant/configuration.yaml
+!config/home-assistant/scenes.yaml
 config/zigbee2mqtt/log/
 store/coder/coder-logs/
 store/mariadb/
 credentials.txt
+esphome/

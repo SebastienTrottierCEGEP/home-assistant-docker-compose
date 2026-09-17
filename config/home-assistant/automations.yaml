@@ -1,0 +1,153 @@
+- id: '1788453019543'
+  alias: Basculer_interrupter_test_1_au_depart
+  description: ''
+  triggers:
+  - trigger: homeassistant
+    event: start
+  conditions: []
+  actions:
+  - action: input_boolean.toggle
+    metadata: {}
+    target:
+      entity_id: input_boolean.interrupteur_virtuel_1
+    data: {}
+  mode: single
+- id: '1788561874450'
+  alias: Lumiere virtuelle suit potentiometre
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id: sensor.salon_xiao_esp32c6_rouge_xiao_potentiometer_value
+  conditions: []
+  actions:
+  - action: input_number.set_value
+    metadata: {}
+    target:
+      entity_id: input_number.lampe_virtuelle
+    data:
+      value: '{{ trigger.to_state.state | float }}'
+  mode: single
+- id: '1788644818241'
+  alias: Ex 13.2 - incrementer recapteur virtuel apres 2s activation capteur virutel
+  description: ''
+  triggers:
+  - trigger: switch.turned_on
+    target:
+      entity_id: input_boolean.exercice_13_capteur_virtuel
+    options:
+      behavior: each
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 2
+  - trigger: button.pressed
+    target:
+      entity_id: input_button.exercice_13_2_activer_manuellement_automatisation
+    options: {}
+  conditions: []
+  actions:
+  - action: input_number.increment
+    metadata: {}
+    target:
+      entity_id: input_number.exercice_13_recepteur_virtuel
+    data: {}
+  mode: single
+- id: '1789064316933'
+  alias: Incrément si temp au-dessus de 10 deg Celsius seulement
+  description: ''
+  triggers:
+  - trigger: switch.turned_on
+    target:
+      entity_id: input_boolean.exercice_13_capteur_virtuel
+    options:
+      behavior: each
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 2
+  - trigger: button.pressed
+    target:
+      entity_id: input_button.exercice_13_2_activer_manuellement_automatisation
+    options: {}
+  conditions:
+  - condition: temperature.is_value
+    target:
+      entity_id: sensor.openweathermap_temperature
+    options:
+      behavior: any
+      for: 00:00:00
+      threshold:
+        type: above
+        value:
+          active_choice: number
+          number: 10
+          unit_of_measurement: °C
+  actions:
+  - action: input_number.increment
+    metadata: {}
+    target:
+      entity_id: input_number.exercice_13_recepteur_virtuel
+    data: {}
+  mode: single
+- id: '1789065847309'
+  alias: Exercice 13.8 - regarder TV sur mouvement
+  description: ''
+  triggers:
+  - trigger: switch.turned_on
+    target:
+      entity_id: input_boolean.exercice_13_8_capteur_virtuel_de_mouvement
+    options:
+      behavior: each
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 2
+  conditions:
+  - condition: numeric_state
+    entity_id: input_number.exercice_13_8_capteur_virtuel_de_luminosite
+    below: 40
+  actions:
+  - action: script.turn_on
+    metadata: {}
+    target:
+      entity_id: script.exercice_13_regarder_tv
+    data: {}
+  mode: single
+- id: '1789410407509'
+  alias: Exercice 14 - Efforts influencent résultats
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id: input_number.exercice_14_efforts
+  conditions: []
+  actions:
+  - action: input_text.set_value
+    metadata: {}
+    target:
+      entity_id: input_text.exercice_14_resultats
+    data:
+      value: '{{ (states(''input_number.exercice_14_efforts'') | int * 10) }} %'
+  mode: single
+- id: '1789596811809'
+  alias: Test envoi courriel
+  description: ''
+  triggers:
+  - trigger: switch.turned_on
+    target:
+      entity_id: input_boolean.exercice_13_capteur_virtuel
+    options:
+      behavior: each
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 1
+  conditions: []
+  actions:
+  - action: notify.send_message
+    metadata: {}
+    data:
+      message: ex13 capteur virtuel activé.  Veuillez rapporter le tout à votre maitre
+      title: Alerte Home Assistant
+    target:
+      entity_id: notify.s_trottier_home_assistant_s_trottier
+  mode: single
