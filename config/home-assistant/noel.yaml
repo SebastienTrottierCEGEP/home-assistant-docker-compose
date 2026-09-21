@@ -6,15 +6,16 @@ views:
     cards:
       - type: entities
         title: Capteurs virtuels
+        show_header_toggle: false
         entities:
           - entity: input_boolean.pere_noel_dans_ma_maison
             name: Père Noël dans ma maison
           - entity: input_boolean.je_suis_a_la_maison
             name: Je suis à la maison
           - entity: input_text.texte_examen
-            name: Texte examen
+            name: Texte
           - entity: input_datetime.date_examen
-            name: Date examen
+            name: Date
       - type: horizontal-stack
         cards:
           - type: button
@@ -34,11 +35,12 @@ views:
               target:
                 entity_id: input_boolean.pere_noel_dans_ma_maison
       - type: markdown
-        title: Résultat
+        title: Père Noël est-il dans ma maison à la veille de Noël?
         content: >-
-          {% if is_state('input_boolean.pere_noel_dans_ma_maison', 'off')
-                and is_state('input_datetime.date_examen', '2025-12-24') %}
+            {% set date_examen = as_datetime(states('input_datetime.date_examen')) %}
+            {% if is_state('input_boolean.pere_noel_dans_ma_maison', 'off')
+              and date_examen.month == 12 and date_examen.day == 24 %}
             Vrai
-          {% else %}
+            {% else %}
             Faux
-          {% endif %}
+            {% endif %}

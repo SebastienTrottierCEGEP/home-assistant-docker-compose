@@ -90,6 +90,44 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "tile",
+                  "entity": "sensor.esphome_devices_xiao_esp32c3_bleu_connected_ssid"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.esphome_devices_xiao_esp32c3_bleu_esphome_version"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.esphome_devices_xiao_esp32c3_bleu_internal_die_temperature"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.esphome_devices_xiao_esp32c3_bleu_ip_address"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.esphome_devices_xiao_esp32c3_bleu_mac_address"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.esphome_devices_xiao_esp32c3_bleu_online_status"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.esphome_devices_xiao_esp32c3_bleu_system_uptime"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.esphome_devices_xiao_esp32c3_bleu_wi_fi_signal_strength"
+                }
+              ],
+              "title": "xiao-esp32c3-bleu"
             }
           ]
         }

@@ -161,9 +161,9 @@
   - condition: state
     entity_id: input_boolean.pere_noel_dans_ma_maison
     state: 'off'
-  - condition: state
-    entity_id: input_datetime.date_examen
-    state: '2025-12-24'
+  - condition: template
+    value_template: '{% set date_examen = as_datetime(states(''input_datetime.date_examen''))
+      %} {{ date_examen.month == 12 and date_examen.day == 24 }}'
   actions:
   - action: input_text.set_value
     target:
@@ -182,10 +182,40 @@
   - condition: state
     entity_id: input_boolean.je_suis_a_la_maison
     state: 'on'
+  - condition: template
+    value_template: '{% set date_examen = as_datetime(states(''input_datetime.date_examen''))
+      %} {{ date_examen.month == 12 and date_examen.day == 24 }}'
   actions:
   - action: input_text.set_value
     target:
       entity_id: input_text.texte_examen
     data:
       value: Le Père Noël arrive, réveille-toi!
+  mode: single
+- id: examen_initialiser_date
+  alias: Examen - Initialiser la date du jour
+  description: Initialise la date virtuelle avec la date actuelle au démarrage.
+  triggers:
+  - trigger: homeassistant
+    event: start
+  conditions: []
+  actions:
+  - action: input_datetime.set_datetime
+    target:
+      entity_id: input_datetime.date_examen
+    data:
+      date: '{{ now().strftime(''%Y-%m-%d'') }}'
+  mode: single
+- id: '1789754011220'
+  alias: Xiao ESP32-C3 online status
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id: binary_sensor.esphome_devices_xiao_esp32c3_bleu_online_status
+  conditions: []
+  actions:
+  - action: logbook.log
+    metadata: {}
+    data:
+      message: Changement état connection Xiao 32-C3 bleu
   mode: single
