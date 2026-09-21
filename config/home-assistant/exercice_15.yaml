@@ -1,0 +1,73 @@
+title: Exercice 15
+views:
+  - title: Exercice 15
+    path: exercice-15
+    icon: mdi:numeric-15-box
+    cards:
+      - type: entities
+        title: Capteur / Récepteur virtuel
+        show_header_toggle: false
+        entities:
+          - entity: input_boolean.exercice_15_capteur_virtuel
+            name: Capteur / Récepteur
+          - entity: input_button.exercice_15_declencheur_manuel
+            name: Déclencheur manuel
+          - entity: sensor.local_ip
+            name: Adresse IP de l'hôte
+
+      - type: horizontal-stack
+        cards:
+          - type: button
+            name: Activer le capteur
+            icon: mdi:toggle-switch
+            tap_action:
+              action: call-service
+              service: input_boolean.turn_on
+              target:
+                entity_id: input_boolean.exercice_15_capteur_virtuel
+          - type: button
+            name: Désactiver le capteur
+            icon: mdi:toggle-switch-off
+            tap_action:
+              action: call-service
+              service: input_boolean.turn_off
+              target:
+                entity_id: input_boolean.exercice_15_capteur_virtuel
+          - type: button
+            name: Déclencher manuellement
+            icon: mdi:gesture-tap-button
+            tap_action:
+              action: call-service
+              service: input_button.press
+              target:
+                entity_id: input_button.exercice_15_declencheur_manuel
+
+      - type: markdown
+        title: Description des automatisations
+        content: >-
+          **15.1** - Active le récepteur virtuel et envoie un courriel contenant
+          la température extérieure (modèle).
+
+
+          **15.2** - Envoie un courriel et écrit la valeur du capteur dans le
+          fichier journal `exercice_15_journal.txt`.
+
+
+          **15.3** - Au démarrage de Home Assistant, envoie l'adresse IP de
+          l'hôte par courriel (obtenue via un modèle).
+
+
+          **15.4** - Ajoute une entrée dans le journal des activités à 10h
+          tous les jours.
+
+
+          **15.5** - N'agit que si le capteur est activé entre 10h et 12h
+          inclusivement.
+
+
+          **15.6** - N'agit que le samedi et le dimanche.
+
+      - type: logbook
+        title: Journal des activités
+        entities:
+          - input_boolean.exercice_15_capteur_virtuel

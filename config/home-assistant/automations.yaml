@@ -219,3 +219,112 @@
     data:
       message: Changement état connection Xiao 32-C3 bleu
   mode: single
+- id: '1789800000001'
+  alias: Exercice 15.1 - Activer récepteur et envoyer courriel
+  description: Agit sur le récepteur virtuel puis avise par courriel, avec une info de capteur obtenue via un modèle.
+  triggers:
+  - trigger: state
+    entity_id: input_button.exercice_15_declencheur_manuel
+  conditions: []
+  actions:
+  - action: input_boolean.turn_on
+    metadata: {}
+    target:
+      entity_id: input_boolean.exercice_15_capteur_virtuel
+    data: {}
+  - action: notify.send_message
+    metadata: {}
+    data:
+      title: Exercice 15 - Récepteur activé
+      message: >-
+        Le récepteur virtuel de l'exercice 15 vient d'être activé. Température
+        extérieure actuelle : {{ states('sensor.openweathermap_temperature') }} °C.
+    target:
+      entity_id: notify.s_trottier_home_assistant_s_trottier_locavora_org
+  mode: single
+- id: '1789800000002'
+  alias: Exercice 15.2 - Courriel et écriture dans un journal fichier
+  description: En plus d'envoyer un courriel, écrit la valeur du capteur dans un fichier journal.
+  triggers:
+  - trigger: state
+    entity_id: input_boolean.exercice_15_capteur_virtuel
+    to: 'on'
+  conditions: []
+  actions:
+  - action: notify.send_message
+    metadata: {}
+    data:
+      title: Exercice 15 - Capteur activé
+      message: 'Le capteur virtuel de l''exercice 15 est maintenant : {{ states(''input_boolean.exercice_15_capteur_virtuel'') }}.'
+    target:
+      entity_id: notify.s_trottier_home_assistant_s_trottier_locavora_org
+  - action: notify.exercice_15_journal_fichier
+    metadata: {}
+    data:
+      message: 'Capteur exercice 15 = {{ states(''input_boolean.exercice_15_capteur_virtuel'') }}'
+    target: {}
+  mode: single
+- id: '1789800000003'
+  alias: Exercice 15.3 - Envoyer l'adresse IP de l'hôte au démarrage
+  description: Retrouve l'adresse IP de l'hôte à l'aide d'un modèle et l'envoie par courriel au démarrage de Home Assistant.
+  triggers:
+  - trigger: homeassistant
+    event: start
+  conditions: []
+  actions:
+  - action: notify.send_message
+    metadata: {}
+    data:
+      title: Home Assistant - Démarrage
+      message: "L'adresse IP de l'hôte Home Assistant est : {{ states('sensor.local_ip') }}"
+    target:
+      entity_id: notify.s_trottier_home_assistant_s_trottier_locavora_org
+  mode: single
+- id: '1789800000004'
+  alias: Exercice 15.4 - Entrée journal quotidienne à 10h
+  description: Ajoute une entrée dans le journal des activités à 10h tous les jours.
+  triggers:
+  - trigger: time
+    at: '10:00:00'
+  conditions: []
+  actions:
+  - action: logbook.log
+    metadata: {}
+    data:
+      message: Entrée automatique quotidienne de l'exercice 15 à 10h.
+  mode: single
+- id: '1789800000005'
+  alias: Exercice 15.5 - Action si capteur activé entre 10h et 12h
+  description: N'effectue l'action que si le capteur virtuel est activé entre 10h et 12h inclusivement.
+  triggers:
+  - trigger: state
+    entity_id: input_boolean.exercice_15_capteur_virtuel
+    to: 'on'
+  conditions:
+  - condition: time
+    after: '10:00:00'
+    before: '12:00:01'
+  actions:
+  - action: input_boolean.turn_on
+    metadata: {}
+    target:
+      entity_id: input_boolean.ex_13_7_lumiere_salon_virtuelle
+    data: {}
+  mode: single
+- id: '1789800000006'
+  alias: Exercice 15.6 - Action seulement le samedi et le dimanche
+  description: Effectue une action seulement le samedi et le dimanche.
+  triggers:
+  - trigger: time
+    at: '08:00:00'
+  conditions:
+  - condition: time
+    weekday:
+    - sat
+    - sun
+  actions:
+  - action: logbook.log
+    metadata: {}
+    data:
+      message: Automatisation de fin de semaine exécutée (exercice 15).
+  mode: single

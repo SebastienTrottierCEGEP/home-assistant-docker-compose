@@ -19,6 +19,16 @@ input_boolean:
   je_suis_a_la_maison:
     name: Je suis à la maison
 
+  exercice_15_capteur_virtuel:
+    name: Exercice 15 - Capteur / Récepteur virtuel
+    icon: mdi:toggle-switch
+    initial: false
+
+input_button:
+  exercice_15_declencheur_manuel:
+    name: Exercice 15 - Déclencheur manuel
+    icon: mdi:gesture-tap-button
+
 input_text:
   texte_examen:
     name: Texte examen
@@ -30,6 +40,13 @@ input_datetime:
     has_date: true
     has_time: false
 
+# Cible de notification qui écrit dans un fichier journal, utilisée par l'exercice 15
+notify:
+  - name: exercice_15_journal_fichier
+    platform: file
+    filename: exercice_15_journal.txt
+    timestamp: true
+
 lovelace:
   dashboards:
     noel-dashboard:
@@ -38,3 +55,9 @@ lovelace:
       icon: mdi:string-lights
       show_in_sidebar: true
       filename: noel.yaml
+    exercice-15-dashboard:
+      mode: yaml
+      title: Exercice 15
+      icon: mdi:toggle-switch
+      show_in_sidebar: true
+      filename: exercice_15.yaml
