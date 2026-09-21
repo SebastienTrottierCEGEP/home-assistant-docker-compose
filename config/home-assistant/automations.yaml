@@ -220,8 +220,9 @@
       message: Changement état connection Xiao 32-C3 bleu
   mode: single
 - id: '1789800000001'
-  alias: Exercice 15.1 - Activer récepteur et envoyer courriel
-  description: Agit sur le récepteur virtuel puis avise par courriel, avec une info de capteur obtenue via un modèle.
+  alias: Exercice 15.2 - Activer récepteur et envoyer courriel
+  description: Agit sur le récepteur virtuel puis avise par courriel, avec une info
+    de capteur obtenue via un modèle.
   triggers:
   - trigger: state
     entity_id: input_button.exercice_15_declencheur_manuel
@@ -236,15 +237,16 @@
     metadata: {}
     data:
       title: Exercice 15 - Récepteur activé
-      message: >-
-        Le récepteur virtuel de l'exercice 15 vient d'être activé. Température
-        extérieure actuelle : {{ states('sensor.openweathermap_temperature') }} °C.
+      message: 'Le récepteur virtuel de l''exercice 15 vient d''être activé. Température
+        extérieure actuelle : {{ states(''sensor.openweathermap_temperature'') }}
+        °C.'
     target:
       entity_id: notify.s_trottier_home_assistant_s_trottier_locavora_org
   mode: single
 - id: '1789800000002'
-  alias: Exercice 15.2 - Courriel et écriture dans un journal fichier
-  description: En plus d'envoyer un courriel, écrit la valeur du capteur dans un fichier journal.
+  alias: Exercice 15.3 - Courriel et écriture dans le journal système
+  description: En plus d'envoyer un courriel, écrit la valeur du capteur dans le journal
+    système (system_log) au niveau warning.
   triggers:
   - trigger: state
     entity_id: input_boolean.exercice_15_capteur_virtuel
@@ -254,19 +256,22 @@
   - action: notify.send_message
     metadata: {}
     data:
-      title: Exercice 15 - Capteur activé
-      message: 'Le capteur virtuel de l''exercice 15 est maintenant : {{ states(''input_boolean.exercice_15_capteur_virtuel'') }}.'
+      title: Exercice 15.3 - Capteur activé
+      message: 'Le capteur virtuel de l''exercice 15 est maintenant : {{ states(''input_boolean.exercice_15_capteur_virtuel'')
+        }}.'
     target:
       entity_id: notify.s_trottier_home_assistant_s_trottier_locavora_org
-  - action: notify.exercice_15_journal_fichier
+  - action: system_log.write
     metadata: {}
     data:
-      message: 'Capteur exercice 15 = {{ states(''input_boolean.exercice_15_capteur_virtuel'') }}'
-    target: {}
+      message: Capteur exercice 15 = {{ states('input_boolean.exercice_15_capteur_virtuel')
+        }}
+      level: warning
   mode: single
 - id: '1789800000003'
-  alias: Exercice 15.3 - Envoyer l'adresse IP de l'hôte au démarrage
-  description: Retrouve l'adresse IP de l'hôte à l'aide d'un modèle et l'envoie par courriel au démarrage de Home Assistant.
+  alias: Exercice 15.5 - Envoyer l'adresse IP de l'hôte au démarrage
+  description: Retrouve l'adresse IP de l'hôte à l'aide d'un modèle et l'envoie par
+    courriel au démarrage de Home Assistant.
   triggers:
   - trigger: homeassistant
     event: start
@@ -275,13 +280,14 @@
   - action: notify.send_message
     metadata: {}
     data:
-      title: Home Assistant - Démarrage
-      message: "L'adresse IP de l'hôte Home Assistant est : {{ states('sensor.local_ip') }}"
+      title: Home Assistant - Démarrage - Ex 15.5
+      message: 'L''adresse IP de l''hôte Home Assistant est : {{ states(''sensor.local_ip'')
+        }}'
     target:
       entity_id: notify.s_trottier_home_assistant_s_trottier_locavora_org
   mode: single
 - id: '1789800000004'
-  alias: Exercice 15.4 - Entrée journal quotidienne à 10h
+  alias: Exercice 15.5 - Entrée journal quotidienne à 10h
   description: Ajoute une entrée dans le journal des activités à 10h tous les jours.
   triggers:
   - trigger: time
@@ -291,11 +297,12 @@
   - action: logbook.log
     metadata: {}
     data:
-      message: Entrée automatique quotidienne de l'exercice 15 à 10h.
+      message: Entrée automatique quotidienne de l'exercice 15.5 à 10h.
   mode: single
 - id: '1789800000005'
-  alias: Exercice 15.5 - Action si capteur activé entre 10h et 12h
-  description: N'effectue l'action que si le capteur virtuel est activé entre 10h et 12h inclusivement.
+  alias: Exercice 15.6 - Action si capteur activé entre 10h et 12h
+  description: N'effectue l'action que si le capteur virtuel est activé entre 10h
+    et 12h inclusivement.
   triggers:
   - trigger: state
     entity_id: input_boolean.exercice_15_capteur_virtuel
@@ -312,11 +319,11 @@
     data: {}
   mode: single
 - id: '1789800000006'
-  alias: Exercice 15.6 - Action seulement le samedi et le dimanche
+  alias: Exercice 15.7 - Action seulement le samedi et le dimanche
   description: Effectue une action seulement le samedi et le dimanche.
   triggers:
   - trigger: time
-    at: '08:00:00'
+    at: 09:00:00
   conditions:
   - condition: time
     weekday:

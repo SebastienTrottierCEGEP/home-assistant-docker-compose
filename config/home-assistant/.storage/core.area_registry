@@ -34,14 +34,14 @@
         "aliases": [],
         "floor_id": null,
         "humidity_entity_id": null,
-        "icon": null,
+        "icon": "mdi:account-check-outline",
         "id": "exercice_13",
         "labels": [],
         "name": "Exercice 13",
         "picture": null,
         "temperature_entity_id": null,
         "created_at": "2026-09-05T21:43:41.106871+00:00",
-        "modified_at": "2026-09-05T21:43:41.106932+00:00"
+        "modified_at": "2026-09-21T17:41:27.800147+00:00"
       },
       {
         "aliases": [],
@@ -68,6 +68,19 @@
         "temperature_entity_id": null,
         "created_at": "2026-09-17T15:16:34.327255+00:00",
         "modified_at": "2026-09-17T15:16:34.327259+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": "mdi:button-cursor",
+        "id": "exercice_15",
+        "labels": [],
+        "name": "Exercice 15",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2026-09-21T17:41:18.161584+00:00",
+        "modified_at": "2026-09-21T17:41:18.161589+00:00"
       }
     ]
   }

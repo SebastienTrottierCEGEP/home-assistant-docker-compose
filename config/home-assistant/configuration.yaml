@@ -40,13 +40,6 @@ input_datetime:
     has_date: true
     has_time: false
 
-# Cible de notification qui écrit dans un fichier journal, utilisée par l'exercice 15
-notify:
-  - name: exercice_15_journal_fichier
-    platform: file
-    filename: exercice_15_journal.txt
-    timestamp: true
-
 lovelace:
   dashboards:
     noel-dashboard:
