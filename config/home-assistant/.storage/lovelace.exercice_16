@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.exercice_16",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "type": "sections",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Nouvelle section"
+                },
+                {
+                  "type": "map",
+                  "title": "Localisations",
+                  "show_all": false,
+                  "entities": [
+                    {
+                      "entity": "device_tracker.tracker_test2"
+                    }
+                  ],
+                  "theme_mode": "auto"
+                },
+                {
+                  "type": "tile",
+                  "entity": "device_tracker.tracker_test2"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "",
+                  "icon": "mdi:button-cursor",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "device_tracker.see",
+                    "target": {},
+                    "data": {
+                      "dev_id": "tracker_test2",
+                      "location_name": "cegep",
+                      "gps": [
+                        46.05950401643312,
+                        -71.94366933175239
+                      ],
+                      "gps_accuracy": 15
+                    }
+                  },
+                  "name": "Déménage au CEGEP"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "device_tracker.tracker_test2",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "device_tracker.see",
+                    "target": {},
+                    "data": {
+                      "gps": [
+                        46.055900376785154,
+                        -71.9956818458046
+                      ],
+                      "dev_id": "tracker_test2",
+                      "location_name": "home",
+                      "gps_accuracy": 15
+                    }
+                  },
+                  "icon": "mdi:gesture-tap-button",
+                  "name": "Déménage à la Maison"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

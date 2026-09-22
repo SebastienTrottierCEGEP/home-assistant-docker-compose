@@ -335,3 +335,61 @@
     data:
       message: Automatisation de fin de semaine exécutée (exercice 15).
   mode: single
+- id: '1790023456758'
+  alias: Exercice 16
+  description: ''
+  triggers:
+  - trigger: zone.left
+    target:
+      entity_id: device_tracker.tracker_test2
+    options:
+      for: 00:00:00
+      zone: zone.cegep
+  conditions: []
+  actions:
+  - action: logbook.log
+    metadata: {}
+    data:
+      message: '**** Zone quittee **** tracker 2'
+      name: ABC
+  - action: system_log.write
+    metadata: {}
+    data:
+      level: error
+      message: Ex16 - declenchee *****
+  - action: notify.notify
+    metadata: {}
+    data:
+      message: temp automatisatino corrigee!
+  mode: single
+- id: '1790029582240'
+  alias: 'Exercice 16: Tracker Entered Cegep Zone'
+  description: Triggers when tracker_test2 enters the Cegep zone
+  triggers:
+  - trigger: zone
+    entity_id: device_tracker.tracker_test2
+    zone: zone.cegep
+    event: enter
+  conditions: []
+  actions:
+  - action: notify.persistent_notification
+    data:
+      title: Zone Alert
+      message: device_tracker.tracker_test2 entered Cégep!
+  mode: single
+- id: '1790030965852'
+  alias: Exercice 16 - nouvelle syntaxe
+  description: Triggers when tracker_test2 enters the Cegep zone
+  triggers:
+  - trigger: zone.left
+    target:
+      entity_id: device_tracker.tracker_test2
+    options:
+      zone: zone.cegep
+  conditions: []
+  actions:
+  - action: notify.persistent_notification
+    data:
+      title: Zone Alert
+      message: Exercice 16 - nouvelle syntaxe
+  mode: single

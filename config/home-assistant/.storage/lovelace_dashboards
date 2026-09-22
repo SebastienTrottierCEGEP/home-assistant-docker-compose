@@ -48,6 +48,15 @@
         "title": "Exercice 14",
         "url_path": "exercice-14",
         "mode": "storage"
+      },
+      {
+        "id": "exercice_16",
+        "require_admin": false,
+        "show_in_sidebar": true,
+        "icon": "mdi:account-arrow-down-outline",
+        "title": "Exercice 16",
+        "url_path": "exercice-16",
+        "mode": "storage"
       }
     ]
   }

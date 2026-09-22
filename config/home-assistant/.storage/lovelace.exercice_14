@@ -61,10 +61,6 @@
                   "grid_options": {
                     "columns": "full"
                   }
-                },
-                {
-                  "type": "tile",
-                  "entity": "automation.exercice_14_efforts_influencent_resultats"
                 }
               ],
               "column_span": 4
