@@ -393,3 +393,19 @@
       title: Zone Alert
       message: Exercice 16 - nouvelle syntaxe
   mode: single
+- id: '1790130086097'
+  alias: Pixel 6a au bureau
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - sensor.pixel6a_room
+    to:
+    - bureausousol
+  conditions: []
+  actions:
+  - action: notify.notify
+    metadata: {}
+    data:
+      message: pixel6a au bureau
+  mode: single

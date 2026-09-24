@@ -54,3 +54,11 @@ lovelace:
       icon: mdi:toggle-switch
       show_in_sidebar: true
       filename: exercice_15.yaml
+
+sensor:
+  - platform: mqtt_room
+    device_id: "iBeacon:47e89096-9f75-4867-9491-bf896618939c-100-40004"
+    name: "Pixel6a Room"
+    state_topic: "espresense/devices/iBeacon:47e89096-9f75-4867-9491-bf896618939c-100-40004"
+    timeout: 10
+    away_timeout: 120

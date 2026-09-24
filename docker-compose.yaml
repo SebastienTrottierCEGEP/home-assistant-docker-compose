@@ -32,13 +32,14 @@ services:
 
 
   # eclipse-mosquitto (MQTT broker)
-  #eclipse-mosquitto:
-  #  container_name: eclipse-mosquitto
-  #  image: eclipse-mosquitto:latest
-  #  restart: unless-stopped
-  #  network_mode: host
-  #  volumes:
-  #    - ./config/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+  eclipse-mosquitto:
+    container_name: eclipse-mosquitto
+    image: eclipse-mosquitto:latest
+    restart: unless-stopped
+    ports:
+      - 1883:1883
+    volumes:
+      - ./config/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
 
 
   # zigbee2mqtt
