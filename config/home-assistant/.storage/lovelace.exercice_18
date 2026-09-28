@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.exercice_18",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "type": "sections",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Réveil, départ, retour, coucher",
+                  "heading_style": "title"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

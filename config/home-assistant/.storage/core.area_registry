@@ -84,7 +84,7 @@
       },
       {
         "aliases": [],
-        "floor_id": null,
+        "floor_id": "sous_sol",
         "humidity_entity_id": null,
         "icon": null,
         "id": "bureausoussol",
@@ -93,7 +93,46 @@
         "picture": null,
         "temperature_entity_id": null,
         "created_at": "2026-09-23T00:58:34.671204+00:00",
-        "modified_at": "2026-09-23T00:58:34.671229+00:00"
+        "modified_at": "2026-09-26T16:02:11.416676+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "sous_sol",
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "chambre_sous_sol",
+        "labels": [],
+        "name": "Chambre Sous-Sol",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2026-09-26T16:02:40.421128+00:00",
+        "modified_at": "2026-09-26T16:02:40.421146+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": "mdi:map-marker-multiple",
+        "id": "exercice_16",
+        "labels": [],
+        "name": "Exercice 16",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2026-09-27T17:53:51.236454+00:00",
+        "modified_at": "2026-09-27T17:54:05.953626+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": "mdi:information-variant-circle",
+        "id": "exercice_18",
+        "labels": [],
+        "name": "Exercice 18",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2026-09-28T19:52:12.727330+00:00",
+        "modified_at": "2026-09-28T19:52:12.727336+00:00"
       }
     ]
   }

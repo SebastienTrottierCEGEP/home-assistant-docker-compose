@@ -10,8 +10,18 @@
         "user_id": "73c2ed64109648f98032d5b11615007b",
         "device_trackers": [
           "device_tracker.pixel_6a",
-          "device_tracker.emulateur_android_studio"
-        ]
+          "device_tracker.exercice_16_suivi_s_trottier_virtuel"
+        ],
+        "picture": "/api/image/serve/a74788721b515f7efbb49f4e982546ab/512x512"
+      },
+      {
+        "id": "exercice_16_personne_1",
+        "name": "Exercice 16 - Personne 1",
+        "device_trackers": [
+          "device_tracker.suivipersonne1_ex16"
+        ],
+        "user_id": null,
+        "picture": "/api/image/serve/c5509ad4a1346d68ffcbccb0a429d74e/512x512"
       }
     ]
   }

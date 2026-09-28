@@ -335,64 +335,6 @@
     data:
       message: Automatisation de fin de semaine exécutée (exercice 15).
   mode: single
-- id: '1790023456758'
-  alias: Exercice 16
-  description: ''
-  triggers:
-  - trigger: zone.left
-    target:
-      entity_id: device_tracker.tracker_test2
-    options:
-      for: 00:00:00
-      zone: zone.cegep
-  conditions: []
-  actions:
-  - action: logbook.log
-    metadata: {}
-    data:
-      message: '**** Zone quittee **** tracker 2'
-      name: ABC
-  - action: system_log.write
-    metadata: {}
-    data:
-      level: error
-      message: Ex16 - declenchee *****
-  - action: notify.notify
-    metadata: {}
-    data:
-      message: temp automatisatino corrigee!
-  mode: single
-- id: '1790029582240'
-  alias: 'Exercice 16: Tracker Entered Cegep Zone'
-  description: Triggers when tracker_test2 enters the Cegep zone
-  triggers:
-  - trigger: zone
-    entity_id: device_tracker.tracker_test2
-    zone: zone.cegep
-    event: enter
-  conditions: []
-  actions:
-  - action: notify.persistent_notification
-    data:
-      title: Zone Alert
-      message: device_tracker.tracker_test2 entered Cégep!
-  mode: single
-- id: '1790030965852'
-  alias: Exercice 16 - nouvelle syntaxe
-  description: Triggers when tracker_test2 enters the Cegep zone
-  triggers:
-  - trigger: zone.left
-    target:
-      entity_id: device_tracker.tracker_test2
-    options:
-      zone: zone.cegep
-  conditions: []
-  actions:
-  - action: notify.persistent_notification
-    data:
-      title: Zone Alert
-      message: Exercice 16 - nouvelle syntaxe
-  mode: single
 - id: '1790130086097'
   alias: Pixel 6a au bureau
   description: ''
@@ -408,4 +350,62 @@
     metadata: {}
     data:
       message: pixel6a au bureau
+  mode: single
+- id: '1790551489341'
+  alias: Exercice 16 - Personne 1 à la maison
+  description: ''
+  triggers:
+  - trigger: zone.entered
+    target:
+      entity_id: person.exercice_16_personne_1
+    options:
+      for: 00:00:00
+      zone: zone.home
+  conditions: []
+  actions:
+  - action: input_select.select_option
+    metadata: {}
+    target:
+      entity_id: input_select.exercice_16_recepteur
+    data:
+      option: Personne 1 arrivée à la maison
+  mode: single
+- id: '1790551580068'
+  alias: Exercice 16 - Personne 1 à la maison 5 mins
+  description: ''
+  triggers:
+  - trigger: zone.entered
+    target:
+      entity_id: person.exercice_16_personne_1
+    options:
+      for:
+        hours: 0
+        minutes: 5
+        seconds: 0
+      zone: zone.home
+  conditions: []
+  actions:
+  - action: input_select.select_option
+    metadata: {}
+    target:
+      entity_id: input_select.exercice_16_recepteur
+    data:
+      option: Personne 1 à la maison depuis 5 mins
+  mode: single
+- id: '1790551684763'
+  alias: Exercice 16 - Plus personne à la maison
+  description: ''
+  triggers:
+  - trigger: zone.occupancy_cleared
+    options:
+      for: 00:00:00
+      zone: zone.home
+  conditions: []
+  actions:
+  - action: input_select.select_option
+    metadata: {}
+    target:
+      entity_id: input_select.exercice_16_recepteur
+    data:
+      option: Les 2 personnes ont quitté
   mode: single

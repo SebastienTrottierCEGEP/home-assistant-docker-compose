@@ -12,23 +12,38 @@
               "type": "grid",
               "cards": [
                 {
-                  "type": "heading",
-                  "heading": "Nouvelle section"
-                },
-                {
                   "type": "map",
-                  "title": "Localisations",
                   "show_all": false,
                   "entities": [
                     {
-                      "entity": "device_tracker.tracker_test2"
+                      "entity": "zone.cegep"
+                    },
+                    {
+                      "entity": "zone.home"
+                    },
+                    {
+                      "entity": "person.exercice_16_personne_1"
+                    },
+                    {
+                      "entity": "person.sebastien_trottier"
                     }
                   ],
+                  "auto_fit": true,
+                  "fit_zones": false,
+                  "cluster": true,
                   "theme_mode": "auto"
-                },
+                }
+              ],
+              "column_span": 4
+            },
+            {
+              "type": "grid",
+              "cards": [
                 {
-                  "type": "tile",
-                  "entity": "device_tracker.tracker_test2"
+                  "type": "heading",
+                  "heading": "Personne1",
+                  "heading_style": "title",
+                  "icon": "mdi:account-card-outline"
                 },
                 {
                   "show_name": true,
@@ -38,16 +53,12 @@
                   "icon": "mdi:button-cursor",
                   "tap_action": {
                     "action": "perform-action",
-                    "perform_action": "device_tracker.see",
-                    "target": {},
+                    "perform_action": "input_select.select_option",
+                    "target": {
+                      "entity_id": "input_select.exercice16_selecteur_zone_personne1"
+                    },
                     "data": {
-                      "dev_id": "tracker_test2",
-                      "location_name": "cegep",
-                      "gps": [
-                        46.05950401643312,
-                        -71.94366933175239
-                      ],
-                      "gps_accuracy": 15
+                      "option": "CEGEP"
                     }
                   },
                   "name": "Déménage au CEGEP"
@@ -56,23 +67,119 @@
                   "show_name": true,
                   "show_icon": true,
                   "type": "button",
-                  "entity": "device_tracker.tracker_test2",
                   "tap_action": {
                     "action": "perform-action",
-                    "perform_action": "device_tracker.see",
-                    "target": {},
+                    "perform_action": "input_select.select_option",
+                    "target": {
+                      "entity_id": "input_select.exercice16_selecteur_zone_personne1"
+                    },
                     "data": {
-                      "gps": [
-                        46.055900376785154,
-                        -71.9956818458046
-                      ],
-                      "dev_id": "tracker_test2",
-                      "location_name": "home",
-                      "gps_accuracy": 15
+                      "option": "Home"
                     }
                   },
                   "icon": "mdi:gesture-tap-button",
                   "name": "Déménage à la Maison"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_select.exercice16_selecteur_zone_personne1",
+                  "features": [
+                    {
+                      "type": "select-options"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 2
+                  }
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading_style": "title",
+                  "heading": "Sébastien",
+                  "icon": "mdi:human-male-board"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_select.exercice16_selection_zone_strottier",
+                  "features": [
+                    {
+                      "type": "select-options"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 2
+                  }
+                },
+                {
+                  "show_state": true,
+                  "show_name": true,
+                  "camera_view": "auto",
+                  "fit_mode": "cover",
+                  "type": "picture-entity",
+                  "entity": "person.sebastien_trottier",
+                  "image": {
+                    "media_content_id": "https://demo.home-assistant.io/stub_config/bedroom.png"
+                  },
+                  "show_entity_picture": true
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Automatisation",
+                  "heading_style": "title",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": "auto"
+                  },
+                  "icon": "mdi:account-arrow-up"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_select.exercice_16_recepteur",
+                  "features": [
+                    {
+                      "type": "select-options"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 2
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "automation.exercice_16_personne_1_a_la_maison",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "automation.exercice_16_personne_1_a_la_maison_5_mins",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "automation.exercice_16_plus_personne_a_la_maison",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  }
                 }
               ]
             }

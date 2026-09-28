@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "input_select",
+  "data": {
+    "items": [
+      {
+        "id": "exercice16_selecteur_zone_personne1",
+        "name": "Exercice16_selecteur_zone_personne1",
+        "icon": "mdi:map-marker-multiple",
+        "options": [
+          "CEGEP",
+          "Home"
+        ]
+      },
+      {
+        "id": "exercice16_selection_zone_strottier",
+        "name": "Exercice16 - Selection zone STrottier",
+        "icon": "mdi:book-marker",
+        "options": [
+          "Selon GPS",
+          "CEGEP",
+          "Home"
+        ]
+      },
+      {
+        "id": "exercice_16_recepteur",
+        "name": "Exercice 16 - récepteur",
+        "icon": "mdi:account-clock",
+        "options": [
+          "Initial",
+          "Les 2 personnes ont quitté",
+          "Personne 1 arrivée à la maison",
+          "Personne 1 à la maison depuis 5 mins"
+        ]
+      }
+    ]
+  }
+}
