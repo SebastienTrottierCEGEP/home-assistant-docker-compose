@@ -76,7 +76,8 @@
                       "entity": "input_boolean.exercice_18_declencheur_mouvement_cuisine",
                       "name": "Déclencheur du mouvement (cuisine)"
                     }
-                  ]
+                  ],
+                  "show_header_toggle": false
                 },
                 {
                   "type": "tile",
@@ -119,6 +120,61 @@
                 }
               ],
               "column_span": 1
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Scripts",
+                  "heading_style": "title",
+                  "icon": "mdi:script-text"
+                },
+                {
+                  "type": "button",
+                  "show_name": true,
+                  "show_icon": true,
+                  "icon": "mdi:alarm",
+                  "name": "Réveil",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.exercice_18_reveil"
+                  }
+                },
+                {
+                  "type": "button",
+                  "show_name": true,
+                  "show_icon": true,
+                  "icon": "mdi:briefcase-outline",
+                  "name": "Départ",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.exercice_18_depart"
+                  }
+                },
+                {
+                  "type": "button",
+                  "show_name": true,
+                  "show_icon": true,
+                  "icon": "mdi:home-import-outline",
+                  "name": "Retour",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.exercice_18_retour"
+                  }
+                },
+                {
+                  "type": "button",
+                  "show_name": true,
+                  "show_icon": true,
+                  "icon": "mdi:bed",
+                  "name": "Coucher",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.exercice_18_coucher"
+                  }
+                }
+              ]
             }
           ]
         }

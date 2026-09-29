@@ -22,3 +22,101 @@ exercice_13_regarder_tv:
     data: {}
   alias: Exercice 13  - regarder TV
   description: ''
+
+exercice_18_reveil:
+  alias: Réveil
+  description: >-
+    Monte le chauffage, lève les stores, allume la lumière de la chambre,
+    attend la détection de présence dans la cuisine puis allume la lumière
+    de la cuisine et démarre la cafetière.
+  icon: mdi:alarm
+  sequence:
+  - action: input_number.set_value
+    target:
+      entity_id: input_number.exercice_18_temperature_virtuelle
+    data:
+      value: "{{ states('input_number.exercice_18_temperature_virtuelle') | float + 3 }}"
+  - action: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.exercice_18_stores
+  - action: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.exercice_18_lumiere_chambre
+  - wait_template: "{{ is_state('binary_sensor.exercice_18_detecteur_de_mouvement_cuisine', 'on') }}"
+    timeout:
+      minutes: 5
+    continue_on_timeout: true
+  - action: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.exercice_18_lumiere_cuisine
+  - action: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.exercice_18_cafetiere
+  mode: single
+
+exercice_18_depart:
+  alias: Départ
+  description: >-
+    Éteint les lumières et la cafetière, baisse les stores et réduit le
+    chauffage pour l'absence.
+  icon: mdi:briefcase-outline
+  sequence:
+  - action: input_boolean.turn_off
+    target:
+      entity_id:
+      - input_boolean.exercice_18_lumiere_chambre
+      - input_boolean.exercice_18_lumiere_cuisine
+      - input_boolean.exercice_18_cafetiere
+  - action: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.exercice_18_stores
+  - action: input_number.set_value
+    target:
+      entity_id: input_number.exercice_18_temperature_virtuelle
+    data:
+      value: "{{ states('input_number.exercice_18_temperature_virtuelle') | float - 3 }}"
+  mode: single
+
+exercice_18_retour:
+  alias: Retour
+  description: >-
+    Remonte le chauffage à sa valeur d'origine, lève les stores et allume
+    la lumière de la cuisine.
+  icon: mdi:home-import-outline
+  sequence:
+  - action: input_number.set_value
+    target:
+      entity_id: input_number.exercice_18_temperature_virtuelle
+    data:
+      value: "{{ states('input_number.exercice_18_temperature_virtuelle') | float + 3 }}"
+  - action: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.exercice_18_stores
+  - action: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.exercice_18_lumiere_cuisine
+  mode: single
+
+exercice_18_coucher:
+  alias: Coucher
+  description: >-
+    Éteint les lumières et la cafetière, baisse les stores et réduit le
+    chauffage pour la nuit.
+  icon: mdi:bed
+  sequence:
+  - action: input_boolean.turn_off
+    target:
+      entity_id:
+      - input_boolean.exercice_18_lumiere_cuisine
+      - input_boolean.exercice_18_lumiere_chambre
+      - input_boolean.exercice_18_cafetiere
+  - action: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.exercice_18_stores
+  - action: input_number.set_value
+    target:
+      entity_id: input_number.exercice_18_temperature_virtuelle
+    data:
+      value: "{{ states('input_number.exercice_18_temperature_virtuelle') | float - 3 }}"
+  mode: single
+
