@@ -106,6 +106,20 @@ template:
         device_class: motion
         state: "{{ is_state('input_boolean.exercice_18_declencheur_mouvement_cuisine', 'on') }}"
 
+      - name: Exercice 18 - Endormi
+        unique_id: exercice_18_endormi
+        icon: mdi:sleep
+        # Le coucher étant toujours avant minuit, la nuit chevauche le passage à minuit.
+        state: >-
+          {% set coucher = states('input_datetime.exercice_18_heure_coucher') %}
+          {% set reveil = states('input_datetime.exercice_18_heure_reveil') %}
+          {% if coucher in ['unknown', 'unavailable'] or reveil in ['unknown', 'unavailable'] %}
+            {{ false }}
+          {% else %}
+            {% set now_t = now().strftime('%H:%M:%S') %}
+            {{ now_t >= coucher or now_t < reveil }}
+          {% endif %}
+
 lovelace:
   dashboards:
     noel-dashboard:

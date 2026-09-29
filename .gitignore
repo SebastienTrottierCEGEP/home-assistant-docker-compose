@@ -7,13 +7,9 @@ config/home-assistant/*
 !config/home-assistant/.storage/
 
 config/home-assistant/.storage/*
-# Whitelist safe UI dashboards and room/entity registries
-!config/home-assistant/.storage/input*
+# Whitelist UI dashboards (lovelace), virtual devices, and persons
 !config/home-assistant/.storage/lovelace*
-!config/home-assistant/.storage/core.area_registry
-!config/home-assistant/.storage/core.floor_registry
-!config/home-assistant/.storage/core.entity_registry
-!config/home-assistant/.storage/core.device_registry
+!config/home-assistant/.storage/input*
 !config/home-assistant/.storage/person
 
 config/zigbee2mqtt/log/
