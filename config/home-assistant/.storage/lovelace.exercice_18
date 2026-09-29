@@ -73,14 +73,14 @@
                       "name": "Lumière de la cuisine"
                     },
                     {
-                      "entity": "input_boolean.exercice_18_detecteur_mouvement_cuisine",
+                      "entity": "input_boolean.exercice_18_declencheur_mouvement_cuisine",
                       "name": "Déclencheur du mouvement (cuisine)"
-                    },
-                    {
-                      "entity": "binary_sensor.exercice_18_detecteur_mouvement_cuisine",
-                      "name": "Détecteur de mouvement (cuisine)"
                     }
                   ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.exercice_18_detecteur_de_mouvement_cuisine"
                 }
               ]
             }

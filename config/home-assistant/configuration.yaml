@@ -44,7 +44,7 @@ input_boolean:
     icon: mdi:lightbulb
     initial: false
 
-  exercice_18_detecteur_mouvement_cuisine:
+  exercice_18_declencheur_mouvement_cuisine:
     name: Exercice 18 - Déclencheur du détecteur de mouvement (cuisine)
     icon: mdi:motion-sensor
     initial: false
@@ -104,7 +104,7 @@ template:
       - name: Exercice 18 - Détecteur de mouvement (cuisine)
         unique_id: exercice_18_detecteur_mouvement_cuisine
         device_class: motion
-        state: "{{ is_state('input_boolean.exercice_18_detecteur_mouvement_cuisine', 'on') }}"
+        state: "{{ is_state('input_boolean.exercice_18_declencheur_mouvement_cuisine', 'on') }}"
 
 lovelace:
   dashboards:
