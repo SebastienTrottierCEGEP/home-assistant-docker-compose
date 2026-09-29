@@ -195,7 +195,7 @@
                     "action": "perform-action",
                     "perform_action": "automation.trigger",
                     "target": {
-                      "entity_id": "automation.exercice_18_cafe_avant_reveil"
+                      "entity_id": "automation.exercice_18_demarrer_la_cafetiere_avant_le_reveil"
                     },
                     "data": {
                       "skip_condition": true
@@ -212,7 +212,7 @@
                     "action": "perform-action",
                     "perform_action": "automation.trigger",
                     "target": {
-                      "entity_id": "automation.exercice_18_lancer_script_reveil"
+                      "entity_id": "automation.exercice_18_lancer_le_script_reveil_a_l_heure_programmee"
                     },
                     "data": {
                       "skip_condition": true
@@ -229,7 +229,7 @@
                     "action": "perform-action",
                     "perform_action": "automation.trigger",
                     "target": {
-                      "entity_id": "automation.exercice_18_lancer_script_depart"
+                      "entity_id": "automation.exercice_18_lancer_le_script_depart_a_l_heure_programmee"
                     },
                     "data": {
                       "skip_condition": true
@@ -246,7 +246,7 @@
                     "action": "perform-action",
                     "perform_action": "automation.trigger",
                     "target": {
-                      "entity_id": "automation.exercice_18_lancer_script_retour"
+                      "entity_id": "automation.exercice_18_lancer_le_script_retour_a_l_heure_programmee"
                     },
                     "data": {
                       "skip_condition": true
@@ -254,16 +254,16 @@
                   }
                 },
                 {
-                  "type": "button",
                   "show_name": true,
                   "show_icon": true,
+                  "type": "button",
                   "icon": "mdi:bed",
                   "name": "Auto. Coucher",
                   "tap_action": {
                     "action": "perform-action",
                     "perform_action": "automation.trigger",
                     "target": {
-                      "entity_id": "automation.exercice_18_lancer_script_coucher"
+                      "entity_id": "automation.exercice_18_lancer_le_script_coucher_a_l_heure_programmee"
                     },
                     "data": {
                       "skip_condition": true
