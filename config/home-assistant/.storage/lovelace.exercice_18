@@ -83,6 +83,42 @@
                   "entity": "binary_sensor.exercice_18_detecteur_de_mouvement_cuisine"
                 }
               ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading_style": "title",
+                  "heading": "Modèles",
+                  "icon": "mdi:account-card"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.exercice_18_endormi",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.exercice_18_absent",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.exercice_18_a_la_maison_et_reveille",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  }
+                }
+              ],
+              "column_span": 1
             }
           ]
         }
