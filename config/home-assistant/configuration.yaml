@@ -24,6 +24,31 @@ input_boolean:
     icon: mdi:toggle-switch
     initial: false
 
+  exercice_18_stores:
+    name: Exercice 18 - Stores
+    icon: mdi:blinds
+    initial: true
+
+  exercice_18_cafetiere:
+    name: Exercice 18 - Cafetière
+    icon: mdi:coffee-maker
+    initial: false
+
+  exercice_18_lumiere_chambre:
+    name: Exercice 18 - Lumière de la chambre
+    icon: mdi:lightbulb
+    initial: false
+
+  exercice_18_lumiere_cuisine:
+    name: Exercice 18 - Lumière de la cuisine
+    icon: mdi:lightbulb
+    initial: false
+
+  exercice_18_detecteur_mouvement_cuisine:
+    name: Exercice 18 - Déclencheur du détecteur de mouvement (cuisine)
+    icon: mdi:motion-sensor
+    initial: false
+
 input_button:
   exercice_15_declencheur_manuel:
     name: Exercice 15 - Déclencheur manuel
@@ -39,6 +64,47 @@ input_datetime:
     name: Date examen
     has_date: true
     has_time: false
+
+  exercice_18_heure_reveil:
+    name: Exercice 18 - Heure de réveil
+    has_date: false
+    has_time: true
+    icon: mdi:alarm
+
+  exercice_18_heure_depart:
+    name: Exercice 18 - Heure de départ (école / travail)
+    has_date: false
+    has_time: true
+    icon: mdi:briefcase-outline
+
+  exercice_18_heure_retour:
+    name: Exercice 18 - Heure de retour
+    has_date: false
+    has_time: true
+    icon: mdi:home-import-outline
+
+  exercice_18_heure_coucher:
+    name: Exercice 18 - Heure de coucher
+    has_date: false
+    has_time: true
+    icon: mdi:bed
+
+input_number:
+  exercice_18_temperature_virtuelle:
+    name: Exercice 18 - Température virtuelle
+    min: -30
+    max: 50
+    step: 0.1
+    unit_of_measurement: "°C"
+    mode: box
+    icon: mdi:thermometer
+
+template:
+  - binary_sensor:
+      - name: Exercice 18 - Détecteur de mouvement (cuisine)
+        unique_id: exercice_18_detecteur_mouvement_cuisine
+        device_class: motion
+        state: "{{ is_state('input_boolean.exercice_18_detecteur_mouvement_cuisine', 'on') }}"
 
 lovelace:
   dashboards:

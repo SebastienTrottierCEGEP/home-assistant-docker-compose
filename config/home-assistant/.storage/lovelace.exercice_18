@@ -15,6 +15,72 @@
                   "type": "heading",
                   "heading": "Réveil, départ, retour, coucher",
                   "heading_style": "title"
+                },
+                {
+                  "type": "entities",
+                  "title": "Heures",
+                  "entities": [
+                    {
+                      "entity": "input_datetime.exercice_18_heure_reveil",
+                      "name": "Heure de réveil"
+                    },
+                    {
+                      "entity": "input_datetime.exercice_18_heure_depart",
+                      "name": "Heure de départ (école / travail)"
+                    },
+                    {
+                      "entity": "input_datetime.exercice_18_heure_retour",
+                      "name": "Heure de retour"
+                    },
+                    {
+                      "entity": "input_datetime.exercice_18_heure_coucher",
+                      "name": "Heure de coucher"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Capteurs virtuels",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "entities",
+                  "title": "Maison",
+                  "entities": [
+                    {
+                      "entity": "input_number.exercice_18_temperature_virtuelle",
+                      "name": "Température virtuelle"
+                    },
+                    {
+                      "entity": "input_boolean.exercice_18_stores",
+                      "name": "Stores (levés / baissés)"
+                    },
+                    {
+                      "entity": "input_boolean.exercice_18_cafetiere",
+                      "name": "Cafetière (ouverte / fermée)"
+                    },
+                    {
+                      "entity": "input_boolean.exercice_18_lumiere_chambre",
+                      "name": "Lumière de la chambre"
+                    },
+                    {
+                      "entity": "input_boolean.exercice_18_lumiere_cuisine",
+                      "name": "Lumière de la cuisine"
+                    },
+                    {
+                      "entity": "input_boolean.exercice_18_detecteur_mouvement_cuisine",
+                      "name": "Déclencheur du mouvement (cuisine)"
+                    },
+                    {
+                      "entity": "binary_sensor.exercice_18_detecteur_mouvement_cuisine",
+                      "name": "Détecteur de mouvement (cuisine)"
+                    }
+                  ]
                 }
               ]
             }
