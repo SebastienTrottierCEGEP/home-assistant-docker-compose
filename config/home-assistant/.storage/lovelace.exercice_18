@@ -175,6 +175,102 @@
                   }
                 }
               ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Tester les automatisations",
+                  "heading_style": "title",
+                  "icon": "mdi:test-tube"
+                },
+                {
+                  "type": "button",
+                  "show_name": true,
+                  "show_icon": true,
+                  "icon": "mdi:coffee-maker",
+                  "name": "Café avant réveil",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "automation.trigger",
+                    "target": {
+                      "entity_id": "automation.exercice_18_cafe_avant_reveil"
+                    },
+                    "data": {
+                      "skip_condition": true
+                    }
+                  }
+                },
+                {
+                  "type": "button",
+                  "show_name": true,
+                  "show_icon": true,
+                  "icon": "mdi:alarm",
+                  "name": "Auto. Réveil",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "automation.trigger",
+                    "target": {
+                      "entity_id": "automation.exercice_18_lancer_script_reveil"
+                    },
+                    "data": {
+                      "skip_condition": true
+                    }
+                  }
+                },
+                {
+                  "type": "button",
+                  "show_name": true,
+                  "show_icon": true,
+                  "icon": "mdi:briefcase-outline",
+                  "name": "Auto. Départ",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "automation.trigger",
+                    "target": {
+                      "entity_id": "automation.exercice_18_lancer_script_depart"
+                    },
+                    "data": {
+                      "skip_condition": true
+                    }
+                  }
+                },
+                {
+                  "type": "button",
+                  "show_name": true,
+                  "show_icon": true,
+                  "icon": "mdi:home-import-outline",
+                  "name": "Auto. Retour",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "automation.trigger",
+                    "target": {
+                      "entity_id": "automation.exercice_18_lancer_script_retour"
+                    },
+                    "data": {
+                      "skip_condition": true
+                    }
+                  }
+                },
+                {
+                  "type": "button",
+                  "show_name": true,
+                  "show_icon": true,
+                  "icon": "mdi:bed",
+                  "name": "Auto. Coucher",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "automation.trigger",
+                    "target": {
+                      "entity_id": "automation.exercice_18_lancer_script_coucher"
+                    },
+                    "data": {
+                      "skip_condition": true
+                    }
+                  }
+                }
+              ]
             }
           ]
         }

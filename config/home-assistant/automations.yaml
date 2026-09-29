@@ -409,3 +409,78 @@
     data:
       option: Les 2 personnes ont quitté
   mode: single
+- id: exercice_18_cafe_avant_reveil
+  alias: Exercice 18 - Démarrer la cafetière avant le réveil
+  description: Démarre la cafetière 5 minutes avant l'heure programmée du réveil,
+    à l'aide d'un déclencheur de type template basé sur l'attribut timestamp.
+  triggers:
+  - trigger: template
+    value_template: >-
+      {% set reveil_ts = state_attr('input_datetime.exercice_18_heure_reveil', 'timestamp') %}
+      {{ reveil_ts is not none and now().timestamp() >= (reveil_ts - 300) and now().timestamp() < reveil_ts }}
+  conditions: []
+  actions:
+  - action: input_boolean.turn_on
+    metadata: {}
+    target:
+      entity_id: input_boolean.exercice_18_cafetiere
+    data: {}
+  mode: single
+- id: exercice_18_lancer_script_reveil
+  alias: Exercice 18 - Lancer le script Réveil à l'heure programmée
+  description: Lance le script « Réveil » à l'heure programmée dans le capteur virtuel
+    correspondant.
+  triggers:
+  - trigger: time
+    at: input_datetime.exercice_18_heure_reveil
+  conditions: []
+  actions:
+  - action: script.turn_on
+    metadata: {}
+    target:
+      entity_id: script.exercice_18_reveil
+    data: {}
+  mode: single
+- id: exercice_18_lancer_script_depart
+  alias: Exercice 18 - Lancer le script Départ à l'heure programmée
+  description: Lance le script « Départ » à l'heure programmée du départ pour l'école
+    ou le travail.
+  triggers:
+  - trigger: time
+    at: input_datetime.exercice_18_heure_depart
+  conditions: []
+  actions:
+  - action: script.turn_on
+    metadata: {}
+    target:
+      entity_id: script.exercice_18_depart
+    data: {}
+  mode: single
+- id: exercice_18_lancer_script_retour
+  alias: Exercice 18 - Lancer le script Retour à l'heure programmée
+  description: Lance le script « Retour » à l'heure programmée du retour à la maison.
+  triggers:
+  - trigger: time
+    at: input_datetime.exercice_18_heure_retour
+  conditions: []
+  actions:
+  - action: script.turn_on
+    metadata: {}
+    target:
+      entity_id: script.exercice_18_retour
+    data: {}
+  mode: single
+- id: exercice_18_lancer_script_coucher
+  alias: Exercice 18 - Lancer le script Coucher à l'heure programmée
+  description: Lance le script « Coucher » à l'heure programmée du coucher.
+  triggers:
+  - trigger: time
+    at: input_datetime.exercice_18_heure_coucher
+  conditions: []
+  actions:
+  - action: script.turn_on
+    metadata: {}
+    target:
+      entity_id: script.exercice_18_coucher
+    data: {}
+  mode: single
