@@ -14,7 +14,8 @@
                 {
                   "type": "heading",
                   "heading": "Réveil, départ, retour, coucher",
-                  "heading_style": "title"
+                  "heading_style": "title",
+                  "icon": "mdi:calendar-clock"
                 },
                 {
                   "type": "entities",
@@ -46,7 +47,8 @@
                 {
                   "type": "heading",
                   "heading": "Capteurs virtuels",
-                  "heading_style": "title"
+                  "heading_style": "title",
+                  "icon": "mdi:devices"
                 },
                 {
                   "type": "entities",
@@ -55,10 +57,6 @@
                     {
                       "entity": "input_number.exercice_18_temperature_virtuelle",
                       "name": "Température virtuelle"
-                    },
-                    {
-                      "entity": "input_boolean.exercice_18_stores",
-                      "name": "Stores (levés / baissés)"
                     },
                     {
                       "entity": "input_boolean.exercice_18_cafetiere",
@@ -82,6 +80,21 @@
                     }
                   ],
                   "show_header_toggle": false
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading_style": "title",
+                  "heading": "Stores",
+                  "icon": "mdi:store"
+                },
+                {
+                  "type": "markdown",
+                  "content": "{% if is_state('input_boolean.exercice_18_stores', 'on') %}\n![](/api/image/serve/21bc0ec64088661d4cd611d4899309aa/512x512)\n{% else %}\n![](/api/image/serve/cf5c0590b1d2b6dc17b340dd4f0be93f/512x512)\n{% endif %}"
                 }
               ]
             },
