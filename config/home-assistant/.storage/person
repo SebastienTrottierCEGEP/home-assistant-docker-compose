@@ -22,20 +22,6 @@
         ],
         "user_id": null,
         "picture": "/api/image/serve/c5509ad4a1346d68ffcbccb0a429d74e/512x512"
-      },
-      {
-        "id": "store_o",
-        "name": "store o",
-        "device_trackers": [],
-        "user_id": null,
-        "picture": "/api/image/serve/21bc0ec64088661d4cd611d4899309aa/512x512"
-      },
-      {
-        "id": "stores_fermes",
-        "name": "stores fermes",
-        "device_trackers": [],
-        "user_id": null,
-        "picture": "/api/image/serve/cf5c0590b1d2b6dc17b340dd4f0be93f/512x512"
       }
     ]
   }
