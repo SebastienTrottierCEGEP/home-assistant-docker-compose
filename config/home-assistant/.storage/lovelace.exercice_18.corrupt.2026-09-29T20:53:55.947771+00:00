@@ -77,7 +77,7 @@
                       "name": "Déclencheur du mouvement (cuisine)"
                     },
                     {
-                      "name": "Détecteur de mouvement (cuisine)",
+                      "name": "Détecteur de mouvement (cuisine)"
                       "entity": "binary_sensor.exercice_18_detecteur_de_mouvement_cuisine"
                     }
                   ],
