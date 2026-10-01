@@ -45,7 +45,7 @@ input_boolean:
     initial: false
 
   exercice_18_declencheur_mouvement_cuisine:
-    name: Exercice 18 - Déclencheur du détecteur de mouvement (cuisine)
+    name: Exercice 18 - Détecteur de mouvement (cuisine)
     icon: mdi:motion-sensor
     initial: false
 
@@ -101,11 +101,6 @@ input_number:
 
 template:
   - binary_sensor:
-      - name: Exercice 18 - Détecteur de mouvement (cuisine)
-        unique_id: exercice_18_detecteur_mouvement_cuisine
-        device_class: motion
-        state: "{{ is_state('input_boolean.exercice_18_declencheur_mouvement_cuisine', 'on') }}"
-
       - name: Exercice 18 - Endormi
         unique_id: exercice_18_endormi
         icon: mdi:sleep

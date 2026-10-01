@@ -415,9 +415,9 @@
     à l'aide d'un déclencheur de type template basé sur l'attribut timestamp.
   triggers:
   - trigger: template
-    value_template: >-
-      {% set reveil_ts = state_attr('input_datetime.exercice_18_heure_reveil', 'timestamp') %}
-      {{ reveil_ts is not none and now().timestamp() >= (reveil_ts - 300) and now().timestamp() < reveil_ts }}
+    value_template: "{% set reveil_ts = state_attr('input_datetime.exercice_18_heure_reveil',
+      'timestamp') %} \n{{ now().timestamp() >= (reveil_ts - 300) and now().timestamp()
+      < reveil_ts }}"
   conditions: []
   actions:
   - action: input_boolean.turn_on

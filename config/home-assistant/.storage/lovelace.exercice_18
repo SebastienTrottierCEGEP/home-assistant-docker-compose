@@ -56,7 +56,7 @@
                   "entities": [
                     {
                       "entity": "input_number.exercice_18_temperature_virtuelle",
-                      "name": "Température virtuelle"
+                      "name": "Température chauffage"
                     },
                     {
                       "entity": "input_boolean.exercice_18_cafetiere",
@@ -72,11 +72,7 @@
                     },
                     {
                       "entity": "input_boolean.exercice_18_declencheur_mouvement_cuisine",
-                      "name": "Déclencheur du mouvement (cuisine)"
-                    },
-                    {
-                      "name": "Détecteur de mouvement (cuisine)",
-                      "entity": "binary_sensor.exercice_18_detecteur_de_mouvement_cuisine"
+                      "name": "Détecteur de mouvement (cuisine)"
                     }
                   ],
                   "show_header_toggle": false
