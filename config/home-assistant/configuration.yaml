@@ -113,12 +113,8 @@ template:
         state: >-
           {% set coucher = states('input_datetime.exercice_18_heure_coucher') %}
           {% set reveil = states('input_datetime.exercice_18_heure_reveil') %}
-          {% if coucher in ['unknown', 'unavailable'] or reveil in ['unknown', 'unavailable'] %}
-            {{ false }}
-          {% else %}
-            {% set now_t = now().strftime('%H:%M:%S') %}
-            {{ now_t >= coucher or now_t < reveil }}
-          {% endif %}
+          {% set now_t = now().strftime('%H:%M:%S') %}
+          {{ now_t >= coucher or now_t < reveil }}
 
       - name: Exercice 18 - Absent
         unique_id: exercice_18_absent
@@ -127,12 +123,8 @@ template:
         state: >-
           {% set depart = states('input_datetime.exercice_18_heure_depart') %}
           {% set retour = states('input_datetime.exercice_18_heure_retour') %}
-          {% if depart in ['unknown', 'unavailable'] or retour in ['unknown', 'unavailable'] %}
-            {{ false }}
-          {% else %}
-            {% set now_t = now().strftime('%H:%M:%S') %}
-            {{ now_t >= depart and now_t < retour }}
-          {% endif %}
+          {% set now_t = now().strftime('%H:%M:%S') %}
+          {{ now_t >= depart and now_t < retour }}
 
       - name: Exercice 18 - À la maison et réveillé
         unique_id: exercice_18_maison_et_reveille
